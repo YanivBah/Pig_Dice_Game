@@ -1,0 +1,21 @@
+.btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #37392e;
+  vertical-align: middle;
+}
+.btn ion-icon {
+  margin-right: 10px;
+  font-size: 32px;
+  color: #28afb0;
+}
+.btn:focus,
+.btn:active {
+  border: none;
+  outline: none;
+}
+
+.btn:hover {
+  background: #37392e1a;
+}
