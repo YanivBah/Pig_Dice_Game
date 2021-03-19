@@ -1,0 +1,6 @@
+/* .gameboard {
+  display: grid;
+} */
+.current {
+  color: red;
+}

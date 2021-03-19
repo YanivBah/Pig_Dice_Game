@@ -1,0 +1,26 @@
+.set-winning-score * {
+  box-sizing: border-box;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.349);
+  outline: none;
+  border-radius: 15px;
+  background: white;
+}
+.set-winning-score input {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding-left: 20px;
+}
+.set-winning-score button {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-left: none;
+  cursor: pointer;
+}
+.set-winning-score button:hover {
+  background: #b2dd13;
+}
+.set-winning-score button:disabled:hover {
+  background: white;
+  cursor: not-allowed;
+}

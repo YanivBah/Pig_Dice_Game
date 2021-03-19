@@ -1,4 +1,5 @@
 import React from "react";
+import "./dice.css";
 
 class Dice extends React.Component {
   state = {
@@ -22,8 +23,10 @@ class Dice extends React.Component {
   render() {
     return (
       <div>
-        <div>Dice 1: {this.state.dice1}</div>
-        <div>Dice 2: {this.state.dice2}</div>
+        <div className={`dice dice${this.state.dice1}`}>
+        </div>
+        <div className={`dice dice${this.state.dice2}`}>
+        </div>
       </div>
     );
   }
