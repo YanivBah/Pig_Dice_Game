@@ -4,6 +4,7 @@
   font-size: 20px;
   color: #37392e;
   vertical-align: middle;
+  cursor: pointer;
 }
 .btn ion-icon {
   margin-right: 10px;

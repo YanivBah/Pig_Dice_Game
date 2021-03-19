@@ -17,15 +17,15 @@ class Dice extends React.Component {
     const num1 = this.getRandomNumber();
     const num2 = this.getRandomNumber();
     this.setState({ dice1: num1, dice2: num2 });
-    this.props.onRender(num1+num2);
+    setTimeout(() => this.props.onRender(num1+num2), 550);
   }
 
   render() {
     return (
       <div>
-        <div className={`dice dice${this.state.dice1}`}>
+        <div className={`top-dice dice dice${this.state.dice1}`}>
         </div>
-        <div className={`dice dice${this.state.dice2}`}>
+        <div className={`bottom-dice dice dice${this.state.dice2}`}>
         </div>
       </div>
     );

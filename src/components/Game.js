@@ -2,6 +2,7 @@ import React from "react";
 import Dice from "./Dice/Dice";
 import Button from "./Button/Button";
 import Input from "./Input/Input";
+import Player from "./Player/Player";
 import "./game.css";
 
 class Game extends React.Component {
@@ -22,6 +23,13 @@ class Game extends React.Component {
 
   setWinningScore = (num) => this.setState({ winningScore: num });
 
+  checkIfWinner = () => {
+    const player = this.state[this.state.currentPlayerTurn];
+    if (player.totalScore + player.currentScore >= this.state.winningScore) {
+      // W-I-P
+    }
+  }
+
   updateCurrentScore = async (num) => {
     const player = this.state.currentPlayerTurn;
     const currentScore = this.state[player].currentScore;
@@ -41,6 +49,7 @@ class Game extends React.Component {
       });
       this.switchTurn();
     }
+    await this.checkIfWinner();
   };
 
   switchTurn = () => {
@@ -74,33 +83,31 @@ class Game extends React.Component {
   render() {
     return (
       <div className="gameboard">
-        <div>
-          <h1
-            className={
-              this.state.currentPlayerTurn === "player1" ? "current" : ""
-            }
-          >
-            Player1:
-          </h1>
-          <h3>Total Score - {this.state.player1.totalScore}</h3>
-          <h3>Current Score - {this.state.player1.currentScore}</h3>
+        <Player
+          player="Player1"
+          currentPlayer={this.state.currentPlayerTurn}
+          totalScore={this.state.player1.totalScore}
+          currentScore={this.state.player1.currentScore}
+        />
+        <Player
+          player="Player2"
+          currentPlayer={this.state.currentPlayerTurn}
+          totalScore={this.state.player2.totalScore}
+          currentScore={this.state.player2.currentScore}
+        />
+        <div className={`control ${this.state.currentPlayerTurn}`}>
+          <Button onClick={this.rollDice} icon="dice-sharp" text="Roll Dice" />
+          <Button
+            onClick={this.switchTurn}
+            icon="swap-horizontal"
+            text="Hold"
+          />
+          <Button onClick={this.switchTurn} icon="refresh" text="New Game" />
+          <Input onClick={this.setWinningScore} />
         </div>
-        <div>
-          <h1
-            className={
-              this.state.currentPlayerTurn === "player2" ? "current" : ""
-            }
-          >
-            Player2:
-          </h1>
-          <h3>Total Score - {this.state.player2.totalScore}</h3>
-          <h3>Current Score - {this.state.player2.currentScore}</h3>
+        <div className="dices">
+          {this.state.rollDice && <Dice onRender={this.updateCurrentScore} />}
         </div>
-        <Button onClick={this.rollDice} icon="dice-sharp" text="Roll Dice" />
-        <Button onClick={this.switchTurn} icon="swap-horizontal" text="Hold" />
-        <Button onClick={this.switchTurn} icon="refresh" text="New Game" />
-        {this.state.rollDice && <Dice onRender={this.updateCurrentScore} />}
-        <Input onClick={this.setWinningScore} />
       </div>
     );
   }
