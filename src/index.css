@@ -21,6 +21,10 @@
   background: white;
   width: 80vw;
   max-width: 700px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
   padding: 20px 10px;
   border-radius: 10px;
@@ -46,4 +50,13 @@
 .start-menu .control .line span {
   margin-right: 10px;
   font-size: 20px;
+}
+.start-menu .control .btn {
+  font-size: 25px;
+  margin: 10px auto;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+.start-menu .control .btn ion-icon {
+  color: #2683cf;
 }

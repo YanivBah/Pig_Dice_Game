@@ -3,10 +3,12 @@
   border: none;
   font-size: 20px;
   color: #37392e;
-  vertical-align: middle;
+  /* vertical-align: middle; */
   cursor: pointer;
   transition: opacity 0.5s;
-  display: block;
+  /* display: block; */
+  display: flex;
+  align-items: flex-end;
   margin: 0 auto;
 }
 .btn ion-icon {

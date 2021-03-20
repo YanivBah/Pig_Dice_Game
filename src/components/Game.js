@@ -116,14 +116,16 @@ class Game extends React.Component {
     return (
       <div className="gameboard">
         <Player
-          player="Player1"
+          player="player1"
+          playerName={this.props.player1name.replace(" ", "")}
           currentPlayer={this.state.currentPlayerTurn}
           winner={this.state.winner}
           totalScore={this.state.player1.totalScore}
           currentScore={this.state.player1.currentScore}
         />
         <Player
-          player="Player2"
+          player="player2"
+          playerName={this.props.player2name.replace(" ", "")}
           currentPlayer={this.state.currentPlayerTurn}
           winner={this.state.winner}
           totalScore={this.state.player2.totalScore}
