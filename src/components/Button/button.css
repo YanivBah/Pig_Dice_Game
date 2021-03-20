@@ -6,6 +6,8 @@
   vertical-align: middle;
   cursor: pointer;
   transition: opacity 0.5s;
+  display: block;
+  margin: 0 auto;
 }
 .btn ion-icon {
   margin-right: 10px;

@@ -1,7 +1,7 @@
 import React from "react";
 import Dice from "./Dice/Dice";
 import Button from "./Button/Button";
-import Input from "./Input/Input";
+// import Input from "./Input/Input";
 import Player from "./Player/Player";
 import "./game.css";
 
@@ -12,7 +12,7 @@ class Game extends React.Component {
     rollDice: false,
     winner: null,
     player1: {
-      totalScore: 90,
+      totalScore: 0,
       currentScore: 0,
     },
 
@@ -95,6 +95,23 @@ class Game extends React.Component {
     }
   };
 
+  newGame = () => {
+    this.setState({
+      winningScore: 100,
+      currentPlayerTurn: "player1",
+      rollDice: false,
+      winner: null,
+      player1: {
+        totalScore: 0,
+        currentScore: 0,
+      },
+      player2: {
+        totalScore: 0,
+        currentScore: 0,
+      },
+  });
+  }
+
   render() {
     return (
       <div className="gameboard">
@@ -123,11 +140,16 @@ class Game extends React.Component {
               onClick={this.checkIfWinner}
               icon="swap-horizontal"
               text="Hold"
+              currentScore={
+                this.state[this.state.currentPlayerTurn].currentScore
+              }
             />
-            <Button onClick={this.switchTurn} icon="refresh" text="New Game" />
-            <Input onClick={this.setWinningScore} />
           </div>
         )}
+        <div className="new-game">
+          <Button onClick={this.newGame} icon="refresh" text="New Game" />
+        </div>
+        {/* <Input onClick={this.setWinningScore} /> */}
         <div className="dices">
           {this.state.rollDice && <Dice onRender={this.updateCurrentScore} />}
         </div>

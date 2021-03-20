@@ -12,8 +12,8 @@ class Button extends React.Component {
   render() {
     return (
       <button
-        disabled={this.state.disabled}
-        className="btn"
+        disabled={this.props.currentScore === 0 || this.state.disabled}
+        className='btn'
         onClick={this.disableButton}
       >
         <ion-icon name={this.props.icon}></ion-icon>

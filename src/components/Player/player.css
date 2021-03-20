@@ -1,16 +1,16 @@
 .player {
-  background: #13b8ff25;
+  background: whitesmoke;
   padding: 20px;
   text-align: center;
   transition: background 1s;
 }
 
 .player.current {
-  background: #13b8ff;
+  background: #f6d55c;
 }
 .player.winner {
   background: url(./img/flags.png) no-repeat center center/contain,
-    url(./img/confetti.png) no-repeat center center/cover, whitesmoke;
+    url(./img/confetti.png) no-repeat center center/cover, #f6d55c;
   transition: background 1.8s;
 }
 .player.winner .totalScore {

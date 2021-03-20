@@ -1,0 +1,49 @@
+.start-menu {
+  background: #f6d55c;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+.start-menu h1 {
+  font-size: 80px;
+  color: whitesmoke;
+  text-shadow: 0 0 2px black, 0 0 5px white;
+}
+.start-menu h1 ion-icon {
+  font-size: 50px;
+  padding: 15px;
+  color: #2683cf;
+  background: whitesmoke;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.418), 0 0 5px white;
+}
+.start-menu .control {
+  background: white;
+  width: 80vw;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 10px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.start-menu .control .name {
+  padding-left: 20px;
+  height: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.349);
+  outline: none;
+  border-radius: 15px;
+  background: white;
+}
+.start-menu .control .line {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 12px 0;
+}
+.start-menu .control .line span {
+  margin-right: 10px;
+  font-size: 20px;
+}

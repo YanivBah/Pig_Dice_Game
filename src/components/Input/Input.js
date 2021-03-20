@@ -6,24 +6,20 @@ class Input extends React.Component {
 
   handleClick = (e) => {
     this.setState({ disabled: true });
-    const num = parseInt(e.target.previousElementSibling.value);
-    this.props.onClick(num);
+    this.props.onClick(e.target.previousElementSibling.value);
   }
+  
   render() {
     return (
-      <div className="set-winning-score">
+      <div className="input">
         <input
           disabled={this.state.disabled}
-          type="number"
-          name="winningScore"
-          id="winningScore"
-          min="6"
-          defaultValue="100"
+          type={this.props.type}
+          name={this.props.name}
+          id={this.props.name}
+          defaultValue={this.props.defaultValue}
         />
-        <button
-          disabled={this.state.disabled}
-          onClick={this.handleClick}
-        >
+        <button disabled={this.state.disabled} onClick={this.handleClick}>
           🗸
         </button>
       </div>
