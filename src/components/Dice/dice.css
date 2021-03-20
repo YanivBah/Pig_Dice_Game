@@ -1,13 +1,8 @@
 .dice {
   width: 90px;
   height: 90px;
-  border: 1px solid black;
-  border-radius: 20%;
-  position: relative;
-  background: white;
-  margin: 4px;
-  box-shadow: 0px 0px 100px white;
-  /* animation: swirl-in-fwd 0.6s linear both; */
+  margin: 10px;
+  box-shadow: 0px 0px 50px white;
 }
 .top-dice {
   animation: slide-in-blurred-top 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
@@ -16,48 +11,23 @@
   animation: slide-in-blurred-bottom 0.6s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
 
-.dice1:before,
-.dice2:before,
-.dice3:before,
-.dice4:before,
-.dice5:before,
-.dice6:before {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  position: absolute;
-  font-size: 30px;
+.dice1 {
+  background: url(./img/Dice1.png) no-repeat center center/contain;
 }
-
-.dice1:before {
-  content: "1";
+.dice2 {
+  background: url(./img/Dice2.png) no-repeat center center/contain;
 }
-.dice2:before {
-  content: "2";
+.dice3 {
+  background: url(./img/Dice3.png) no-repeat center center/contain;
 }
-.dice3:before {
-  content: "3";
+.dice4 {
+  background: url(./img/Dice4.png) no-repeat center center/contain;
 }
-.dice4:before {
-  content: "4";
+.dice5 {
+  background: url(./img/Dice5.png) no-repeat center center/contain;
 }
-.dice5:before {
-  content: "5";
-}
-.dice6:before {
-  content: "6";
-}
-
-@keyframes swirl-in-fwd {
-  0% {
-    transform: rotate(-540deg) scale(0);
-    filter: blur(40px);
-    opacity: 0;
-  }
-  100% {
-    transform: rotate(0) scale(1);
-    opacity: 1;
-  }
+.dice6 {
+  background: url(./img/Dice6.png) no-repeat center center/contain;
 }
 
 @keyframes slide-in-blurred-top {

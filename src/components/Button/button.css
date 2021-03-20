@@ -5,6 +5,7 @@
   color: #37392e;
   vertical-align: middle;
   cursor: pointer;
+  transition: opacity 0.5s;
 }
 .btn ion-icon {
   margin-right: 10px;
@@ -19,4 +20,11 @@
 
 .btn:hover {
   background: #37392e1a;
+}
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+.btn:disabled:hover {
+  background: none;
 }
