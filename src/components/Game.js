@@ -40,7 +40,6 @@ class Game extends React.Component {
         const current = data.find((winner) => this.state[this.state.winner].name === winner.name);
         if (current) {
           current.counter++;
-          console.log(current);
         } else {
           const winner = {name: this.state[this.state.winner].name, counter: 1};
           data.push(winner);
