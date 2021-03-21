@@ -7,41 +7,49 @@ import "./game.css";
 
 class Game extends React.Component {
   state = {
-    winningScore: 100,
+    winningScore: this.props.winningScore,
     currentPlayerTurn: "player1",
     rollDice: false,
     winner: null,
     player1: {
+      name: this.props.player1name,
       totalScore: 0,
       currentScore: 0,
     },
 
     player2: {
+      name: this.props.player2name,
       totalScore: 0,
       currentScore: 0,
     },
   };
 
-  // computerPlay = async () => {
-  //   console.log(this.state.currentPlayerTurn);
-  //   if (this.state.currentPlayerTurn === 'player2') {
-  //     for (let i = 0;i <= 4;i++) {
-  //       console.log('hello');
-  //       await setTimeout(this.rollDice,1500);
-  //     }
-  //   }
-  // }
-
   setWinningScore = (num) => this.setState({ winningScore: num });
 
-  checkIfWinner = () => {
+  checkIfWinner = async () => {
     const player = this.state[this.state.currentPlayerTurn];
     if (player.totalScore + player.currentScore >= this.state.winningScore) {
-      this.setState({ winner: this.state.currentPlayerTurn, rollDice: false});
-      console.log(`Winner ${this.state.winner}`);
+      await this.setState({ winner: this.state.currentPlayerTurn, rollDice: false });
+      const winner = this.state[this.state.winner].name;
+      if (localStorage.getItem('winnings') === null) {
+        const winners = [];
+        winners.push({name: winner, counter: 1});
+        localStorage.setItem('winnings',JSON.stringify(winners));
+      } else {
+        const data = JSON.parse(localStorage.getItem("winnings"));
+        const current = data.find((winner) => this.state[this.state.winner].name === winner.name);
+        if (current) {
+          current.counter++;
+          console.log(current);
+        } else {
+          const winner = {name: this.state[this.state.winner].name, counter: 1};
+          data.push(winner);
+        }
+        localStorage.setItem('winnings',JSON.stringify(data));
+      }
     }
-      this.switchTurn();
-  }
+    this.switchTurn();
+  };
 
   updateCurrentScore = async (num) => {
     const player = this.state.currentPlayerTurn;
@@ -49,6 +57,7 @@ class Game extends React.Component {
     if (num !== 12) {
       await this.setState({
         [player]: {
+          name: this.props[`${player}name`],
           currentScore: num + currentScore,
           totalScore: this.state[player].totalScore,
         },
@@ -56,6 +65,7 @@ class Game extends React.Component {
     } else {
       await this.setState({
         [player]: {
+          name: this.props[`${player}name`],
           currentScore: 0,
           totalScore: this.state[player].totalScore,
         },
@@ -81,7 +91,6 @@ class Game extends React.Component {
         await this.setState({ currentPlayerTurn: "player1" });
       }
     }
-    // await this.computerPlay();
   };
 
   rollDice = async () => {
@@ -97,7 +106,7 @@ class Game extends React.Component {
 
   newGame = () => {
     this.setState({
-      winningScore: 100,
+      winningScore: this.state.winningScore,
       currentPlayerTurn: "player1",
       rollDice: false,
       winner: null,
@@ -109,8 +118,8 @@ class Game extends React.Component {
         totalScore: 0,
         currentScore: 0,
       },
-  });
-  }
+    });
+  };
 
   render() {
     return (

@@ -44,7 +44,7 @@ class Start extends React.Component {
   }
 
   showLeaderboard = () => {
-    if (localStorage.getItem('winnings') === null) {
+    if (localStorage.getItem("winnings") === null) {
       return (
         <div className="control">
           <h3>Sorry but I didn't found any winners yet.</h3>
@@ -57,14 +57,14 @@ class Start extends React.Component {
       );
     }
     const winners = JSON.parse(localStorage.getItem("winnings"));
-    winners.sort((a,b) => b.winnings-a.winnings);
+    winners.sort((a,b) => b.counter-a.counter);
     return (
       <div className="control">
         {winners.map((winner) => {
           return (
             <div>
               <h4>{winner.name}</h4>
-              <span>Won {winner.winnings} times</span>
+              <span>Won {winner.counter} times</span>
             </div>
           );
         })}
@@ -85,7 +85,7 @@ class Start extends React.Component {
           <Input
             type="number"
             name="winningscore"
-            defaultValue="100"
+            defaultValue={this.state.winningScore}
             onClick={(value) => this.setState({ winningScore: value })}
           />
         </div>
@@ -93,7 +93,7 @@ class Start extends React.Component {
           <span>Player1 Name: </span>{" "}
           <Input
             name="player1name"
-            defaultValue="Player1"
+            defaultValue={this.state.player1name}
             type="text"
             onClick={(value) => this.setState({ player1name: value })}
           />
@@ -102,16 +102,23 @@ class Start extends React.Component {
           <span>Player2 Name: </span>{" "}
           <Input
             name="player2name"
-            defaultValue="Player2"
+            defaultValue={this.state.player2name}
             type="text"
             onClick={(value) => this.setState({ player2name: value })}
           />
         </div>
-        <Button
-          onClick={() => this.setState({ settings: false })}
-          icon="arrow-back-circle-sharp"
-          text="Back"
-        />
+        <div className="line">
+          <Button
+            onClick={() => this.setState({ settings: false })}
+            icon="arrow-back-circle-sharp"
+            text="Back"
+          />
+          <Button
+            onClick={() => localStorage.clear()}
+            icon="cloud-offline"
+            text="Delete Local Storage"
+          />
+        </div>
       </div>
     );
   };

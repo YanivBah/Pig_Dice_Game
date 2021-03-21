@@ -4,7 +4,6 @@ import "./player.css";
 class Player extends React.Component {
 
   checkWinnerOrCurrent = () => {
-    console.log(this.props.winner);
     if (this.props.winner === this.props.player.toLowerCase()) {
       return "player winner";
     } else if (this.props.currentPlayer === this.props.player.toLowerCase()) {
