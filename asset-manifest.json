@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Pig_Dice_Game/static/css/main.f90a3d19.chunk.css",
+    "main.js": "/Pig_Dice_Game/static/js/main.f4c3d598.chunk.js",
+    "main.js.map": "/Pig_Dice_Game/static/js/main.f4c3d598.chunk.js.map",
+    "runtime-main.js": "/Pig_Dice_Game/static/js/runtime-main.446c4c05.js",
+    "runtime-main.js.map": "/Pig_Dice_Game/static/js/runtime-main.446c4c05.js.map",
+    "static/js/2.f4cbf96c.chunk.js": "/Pig_Dice_Game/static/js/2.f4cbf96c.chunk.js",
+    "static/js/2.f4cbf96c.chunk.js.map": "/Pig_Dice_Game/static/js/2.f4cbf96c.chunk.js.map",
+    "index.html": "/Pig_Dice_Game/index.html",
+    "static/css/main.f90a3d19.chunk.css.map": "/Pig_Dice_Game/static/css/main.f90a3d19.chunk.css.map",
+    "static/js/2.f4cbf96c.chunk.js.LICENSE.txt": "/Pig_Dice_Game/static/js/2.f4cbf96c.chunk.js.LICENSE.txt",
+    "static/media/dice.css": "/Pig_Dice_Game/static/media/Dice6.08f466d3.png",
+    "static/media/player.css": "/Pig_Dice_Game/static/media/flags.c54a9f3d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.446c4c05.js",
+    "static/js/2.f4cbf96c.chunk.js",
+    "static/css/main.f90a3d19.chunk.css",
+    "static/js/main.f4c3d598.chunk.js"
+  ]
+}
