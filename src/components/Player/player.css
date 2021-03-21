@@ -22,6 +22,7 @@
 .player h1 {
   font-size: 80px;
   text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.432);
+  margin-top: 40px;
 }
 
 .player .totalScore {
@@ -39,7 +40,7 @@
   box-shadow: 0px 0px 10px white;
   width: 130px;
   padding: 15px 5px;
-  margin: 100px auto 0 auto;
+  margin: 10px auto 0 auto;
   display: block;
   animation: flip-in-hor-bottom 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -55,5 +56,22 @@
   100% {
     transform: rotateX(0);
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .player {
+    padding: 5px;
+  }
+  .player h1 {
+    font-size: 55px;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.432);
+  }
+  .player .totalScore span {
+    font-size: 70px;
+  }
+  .player .currentScore {
+    margin: 80px auto 0 auto;
+    padding: 7px 2px;
   }
 }
